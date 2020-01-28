@@ -1,0 +1,30 @@
+#titre {
+    background-color: #3b75e0;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    margin: 3% 15% 0 15% ;
+}
+
+section {
+    margin: 5% 0;
+}
+
+.container{
+    margin: 0 0 3% 0;
+}
+
+.container .col:hover {
+    background-color: #3b75e0;
+}
+
+.container a:hover {
+    color: white;
+}
+
+#marg {
+    padding: 5%;
+}
