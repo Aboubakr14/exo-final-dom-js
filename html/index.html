@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    <!-- exrcice 1 -->
     <h1><span id="titre"> Javascript DOM</span></h1>
     <section>
         <div class="container">
@@ -54,10 +53,32 @@
                     dans le span du h2 et l'input sera alors vidé de tout contenu. Attention pas toucher à l'HTML</p>
                 <input type="text" name="" id=name>
                 <button id="bouton">Go</button>
+
             </div>
-        </div>
+            <br>
+            <div id="exercice4">
+                <h2>Déplacer les éléments</h2>
+                <div class="row justify-content-between">
+                    <div class="move">
+                        <div id="carré1" class="d-none">
+                        </div>
+                    </div>
+                    <div class="move">
+                        <div id="carré2" class="d-none">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <input type="button" value="change place" id="move">
+                    </div>
+                    <div class="row justify-content-center">
+                        <button id="cpt">nombre de click: <span id="plus"></span></button> 
+                    </div>
+                </div>
+            </div>
     </section>
-    <!-- fin exercice 1 -->
+
 
     <script src="../js/main.js"></script>
 </body>

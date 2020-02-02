@@ -28,3 +28,36 @@ section {
 .bg-secondary {
     padding: 5%;
 }
+
+.move {
+    display: flex;
+    background-color: #3b75e0;
+    width: 35%;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+}
+
+#carré1 {
+    background-color: red;
+    height: 50px;
+    width: 6%;
+    position: absolute;
+}
+
+#carré2 {
+    background-color: red;
+    height: 50px;
+    width: 6%;
+    position: absolute;
+}
+
+#move {
+    border-radius: 5%;
+    background-color: yellow;
+}
+
+#cpt {
+    border-radius: 5%;
+    background-color: green;
+}
