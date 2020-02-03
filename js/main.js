@@ -84,7 +84,6 @@ change.addEventListener("click", () => changement(carré1, carré2))
 reset.addEventListener("click", () => compt.innerHTML = 0)
 
 // exercice 5 //
-let addSpan = document.createElement("span")
 let addImg = `<img src="../img/58541.png" alt="">`
 let eggs = document.getElementById("eggs")
 let addEgs = document.getElementById('addEgs')
@@ -149,3 +148,37 @@ let karay = () => {
 }
 
 am.addEventListener("click", () => karay())
+
+function calculer() {
+    let a = document.getElementById("output").value
+    let b = eval(a)
+    document.getElementById("output").value = b
+}
+
+function afficher(val) {
+    document.getElementById("output").value += val
+}
+//fonction qui efface l'écran 
+function effacer() {
+    document.getElementById("output").value = ""
+} 
+
+// exercice 7 //
+
+let todo = document.getElementById("todo")
+let check = `<input type="checkbox" name="" id="">`
+let here = document.getElementById("here")
+let para = document.createElement("P")
+
+// check.setAttribute("type", "checkbox")
+
+
+let task = () => {
+    if (window.event.keyCode === 13) {
+        para.innerHTML += todo.value + check
+        here.appendChild(para)
+        todo.value = ""
+    }
+}
+
+todo.addEventListener("keypress", () => task())

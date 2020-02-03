@@ -10,27 +10,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
-    <script>
-        //fonction qui évalue le chiffre et renvoie la sortie
-        function calculer() {
-            let a = document.getElementById("output").value
-            let b = eval(a)
-            document.getElementById("output").value = b
-        }
-        //fonction qui affiche la valeur
-        function afficher(val) {
-            document.getElementById("output").value += val
-        }
-        //fonction qui efface l'écran 
-        function effacer() {
-            document.getElementById("output").value = ""
-        } 
-    </script>
-    <style>
-        td button {
-            width: 100%
-        }
-    </style>
+
 
 </head>
 
@@ -116,10 +96,10 @@
             <div id="exercice6">
                 <p> <input type="text" name="" id="num1">
                     <select name="" onchange="" id="choice">
-                    <option value="+">+</option>
-                    <option value="-">-</option>
-                    <option value="*">*</option>
-                    <option value="/">/</option>
+                        <option value="+">+</option>
+                        <option value="-">-</option>
+                        <option value="*">*</option>
+                        <option value="/">/</option>
                     </select>
                     <input type="text" name="" id="num2">
                     <button id="am">=</button>
@@ -158,8 +138,14 @@
                     </tr>
                 </table>
             </div>
+            <br>
             <div id="exercice7">
-                
+                <h2>To Do List</h2>
+                <hr>
+                <input type="text" name="" id="todo" placeholder="Que dois-je faire ?" style="width: -moz-available;">
+                <div id="here">
+
+                </div>
             </div>
     </section>
     <script src="../js/main.js"></script>
