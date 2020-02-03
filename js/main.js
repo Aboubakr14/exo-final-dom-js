@@ -15,22 +15,25 @@ let titre = document.getElementById("titr");
 titre.classList.add("bg-dark")
 
 // exercice 2 //
-change1.addEventListener("click", () => document.getElementById("exercice2").style.display = "none")
-change1.addEventListener("click", () => document.getElementById("marg").style.display = "block")
-change1.addEventListener("click", () => document.getElementById("exercice3").style.display = "none")
-change1.addEventListener("click", () => document.getElementById("exercice4").style.display = "none")
-change2.addEventListener("click", () => document.getElementById("marg").style.display = "none")
-change2.addEventListener("click", () => document.getElementById("exercice3").style.display = "none")
-change2.addEventListener("click", () => document.getElementById("exercice4").style.display = "none")
-change2.addEventListener("click", () => document.getElementById("exercice2").style.display = "block")
-change3.addEventListener("click", () => document.getElementById("exercice4").style.display = "none")
-change3.addEventListener("click", () => document.getElementById("marg").style.display = "none")
-change3.addEventListener("click", () => document.getElementById("exercice2").style.display = "none")
-change3.addEventListener("click", () => document.getElementById("exercice3").style.display = "block")
-change4.addEventListener("click", () => document.getElementById("marg").style.display = "none")
-change4.addEventListener("click", () => document.getElementById("exercice2").style.display = "none")
-change4.addEventListener("click", () => document.getElementById("exercice3").style.display = "none")
-change4.addEventListener("click", () => document.getElementById("exercice4").style.display = "block")
+
+let dspNone = (changee, changee1, changee2, changee3, changee4, changee5, changee6) => {
+    changee = changee.style.display = 'none'
+    changee1 = changee1.style.display = 'none'
+    changee2 = changee2.style.display = 'none'
+    changee3 = changee3.style.display = 'none'
+    changee4 = changee4.style.display = 'none'
+    changee5 = changee5.style.display = 'none'
+    changee6 = changee6.style.display = 'block'
+}
+
+change1.addEventListener("click", () => dspNone(document.getElementById("exercice2"),document.getElementById("exercice3"),document.getElementById("exercice4"),document.getElementById("exercice5"),document.getElementById("exercice6"),document.getElementById("exercice7"),document.getElementById("marg")))
+change2.addEventListener("click", () => dspNone(document.getElementById("marg"),document.getElementById("exercice3"),document.getElementById("exercice4"),document.getElementById("exercice5"),document.getElementById("exercice6"),document.getElementById("exercice7"),document.getElementById("exercice2")))
+change3.addEventListener("click", () => dspNone(document.getElementById("exercice2"),document.getElementById("marg"),document.getElementById("exercice4"),document.getElementById("exercice5"),document.getElementById("exercice6"),document.getElementById("exercice7"),document.getElementById("exercice3")))
+change4.addEventListener("click", () => dspNone(document.getElementById("exercice2"),document.getElementById("marg"),document.getElementById("exercice3"),document.getElementById("exercice5"),document.getElementById("exercice6"),document.getElementById("exercice7"),document.getElementById("exercice4")))
+change5.addEventListener("click", () => dspNone(document.getElementById("exercice2"),document.getElementById("marg"),document.getElementById("exercice4"),document.getElementById("exercice3"),document.getElementById("exercice6"),document.getElementById("exercice7"),document.getElementById("exercice5")))
+change6.addEventListener("click", () => dspNone(document.getElementById("exercice2"),document.getElementById("marg"),document.getElementById("exercice4"),document.getElementById("exercice5"),document.getElementById("exercice3"),document.getElementById("exercice7"),document.getElementById("exercice6")))
+
+
 // exercice 3 //
 let nom = document.getElementById("name");
 let title = document.getElementById("title");
@@ -82,31 +85,67 @@ reset.addEventListener("click", () => compt.innerHTML = 0)
 
 // exercice 5 //
 let addSpan = document.createElement("span")
-let addImg = document.createElement("img")
+let addImg = `<img src="../img/58541.png" alt="">`
 let eggs = document.getElementById("eggs")
 let addEgs = document.getElementById('addEgs')
 let plus2 = document.getElementById("plus2")
 
-addImg.src = 'https://image.flaticon.com/icons/png/128/58/58541.png'
 
 let bye = document.getElementById("delete")
 let byee = document.getElementById("remove")
 
-let addEggs = (addImg, addEgs) => {
-    addEgs.append(addImg)
-}    
-
-while (eggs.addEventListener("click",() => addEggs(addImg, addEgs), eggs.addEventListener("click", () => plus2.innerHTML++))) {
-    addEggs(addImg,addEggs)
-
-}
-let removeEggs = (addImg, addEgs) => {
-    addEgs.removeChild(addImg)
+let addEggs = () => {
+    addEgs.innerHTML += addImg
 }
 
+let removeEggs = () => {
+    addEgs.removeChild(addEgs.lastChild)
+}
+
+let rmEggs = () => {
+    addEgs.parentNode.removeChild(addEgs)
+}
 
 
-// eggs.addEventListener("click", () => addEggs(addImg, addEgs), eggs.addEventListener("click", () => plus2.innerHTML++))
-byee.addEventListener("click", () => removeEggs(addImg, addEgs), byee.addEventListener("click", () => plus2.innerHTML--))
+
+eggs.addEventListener("click", () => addEggs(), eggs.addEventListener("click", () => plus2.innerHTML++))
+byee.addEventListener("click", () => removeEggs(), byee.addEventListener("click", () => plus2.innerHTML--))
+bye.addEventListener("click", () => rmEggs(), bye.addEventListener("click", () => plus2.innerHTML = 0))
+
+// exercice 6 //
+
+let num1 = document.getElementById("num1")
+let num2 = document.getElementById("num2")
+let am = document.getElementById("am")
+let rs = document.getElementById("résultat")
+let m = document.getElementById("choice");
 
 
+let karay = () => {
+
+    switch (m.value) {
+        case '+':
+            rs.innerHTML = parseInt(num1.value) + parseInt(num2.value)
+            num1.value = ""
+            num2.value = ""
+            break;
+        case '-':
+            rs.innerHTML = parseInt(num1.value) - parseInt(num2.value)
+            num1.value = ""
+            num2.value = ""
+            break;
+        case '*':
+            rs.innerHTML = parseInt(num1.value) * parseInt(num2.value)
+            num1.value = ""
+            num2.value = ""
+            break;
+        case '/':
+            rs.innerHTML = parseInt(num1.value) / parseInt(num2.value)    
+            num1.value = ""
+            num2.value = ""
+            break;
+            default:
+    }
+}
+
+am.addEventListener("click", () => karay())

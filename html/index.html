@@ -5,10 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    <link rel="stylesheet" media="screen, print, handheld"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <title>Document</title>
+    <script>
+        //fonction qui évalue le chiffre et renvoie la sortie
+        function calculer() {
+            let a = document.getElementById("output").value
+            let b = eval(a)
+            document.getElementById("output").value = b
+        }
+        //fonction qui affiche la valeur
+        function afficher(val) {
+            document.getElementById("output").value += val
+        }
+        //fonction qui efface l'écran 
+        function effacer() {
+            document.getElementById("output").value = ""
+        } 
+    </script>
+    <style>
+        td button {
+            width: 100%
+        }
+    </style>
+
 </head>
 
 <body>
@@ -73,11 +96,11 @@
                         <input type="button" value="change place" id="move">
                     </div>
                     <div class="row justify-content-center">
-                        <button id="cpt">nombre de click: <span id="plus"></span></button> 
+                        <button id="cpt">nombre de click: <span id="plus"></span></button>
                     </div>
                 </div>
             </div>
-            <div id="exercice4">
+            <div id="exercice5">
                 <h2>Générer des éléments du dom</h2>
                 <p>cliquez sur le bouton ci-dessous pour générer des oeufs</p>
                 <div id="addEgs" class="">
@@ -87,11 +110,58 @@
                 <input type="button" value="générer un oeuf" id="eggs" class="bg-success">
                 <input type="button" value="supprimer tout" id="delete" class="bg-danger">
                 <input type="button" value="supprimer dernier oeuf" id="remove" class="bg-primary">
-                <button id="compt">nombre de click: <span id="plus2"></span></button> 
+                <button id="compt">nombre de click: <span id="plus2"></span></button>
+            </div>
+            <br>
+            <div id="exercice6">
+                <p> <input type="text" name="" id="num1">
+                    <select name="" onchange="" id="choice">
+                    <option value="+">+</option>
+                    <option value="-">-</option>
+                    <option value="*">*</option>
+                    <option value="/">/</option>
+                    </select>
+                    <input type="text" name="" id="num2">
+                    <button id="am">=</button>
+                    <span id="résultat"></span>
+                </p>
+
+
+                <table border="1">
+                    <tr>
+                        <td colspan="3"><input id="output" /></td>
+                        <td><button onclick="effacer()">c</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="afficher('1')">1</button></td>
+                        <td><button onclick="afficher('2')">2</button></td>
+                        <td><button onclick="afficher('3')">3</button></td>
+                        <td><button onclick="afficher('+')">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="afficher('4')">4</button></td>
+                        <td><button onclick="afficher('5')">5</button></td>
+                        <td><button onclick="afficher('6')">6</button></td>
+                        <td><button onclick="afficher('-')">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="afficher('7')">7</button></td>
+                        <td><button onclick="afficher('8')">8</button></td>
+                        <td><button onclick="afficher('9')">9</button></td>
+                        <td><button onclick="afficher('*')">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button onclick="afficher('.')">.</button></td>
+                        <td><button onclick="afficher('0')">0</button></td>
+                        <td><button onclick="calculer()">=</button></td>
+                        <td><button onclick="afficher('/')">/</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div id="exercice7">
+                
             </div>
     </section>
-
-
     <script src="../js/main.js"></script>
 </body>
 
