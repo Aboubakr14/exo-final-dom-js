@@ -59,8 +59,6 @@ let reset = document.getElementById("cpt")
 let carré1 = document.getElementById("carré1")
 let carré2 = document.getElementById("carré2")
 
-// change.addEventListener("click", () => document.getElementById("carré1").style.display = "none")
-// change.addEventListener("click", () => document.getElementById("carré2").style.display = "block")
 change.addEventListener("click", () => compt.innerHTML++)
 
 
@@ -69,7 +67,7 @@ let changement = (carré1, carré2) => {
     if (carré2.classList == "d-none") {
         carré1.classList = 'd-none'
         carré2.classList = 'd-block'
-        
+
     }
     else {
         carré2.classList = 'd-none'
@@ -77,7 +75,38 @@ let changement = (carré1, carré2) => {
     }
 
 }
-  
 
-    change.addEventListener("click", () => changement(carré1,carré2))
-    reset.addEventListener("click", () => compt.innerHTML = 0)                       
+
+change.addEventListener("click", () => changement(carré1, carré2))
+reset.addEventListener("click", () => compt.innerHTML = 0)
+
+// exercice 5 //
+let addSpan = document.createElement("span")
+let addImg = document.createElement("img")
+let eggs = document.getElementById("eggs")
+let addEgs = document.getElementById('addEgs')
+let plus2 = document.getElementById("plus2")
+
+addImg.src = 'https://image.flaticon.com/icons/png/128/58/58541.png'
+
+let bye = document.getElementById("delete")
+let byee = document.getElementById("remove")
+
+let addEggs = (addImg, addEgs) => {
+    addEgs.append(addImg)
+}    
+
+while (eggs.addEventListener("click",() => addEggs(addImg, addEgs), eggs.addEventListener("click", () => plus2.innerHTML++))) {
+    addEggs(addImg,addEggs)
+
+}
+let removeEggs = (addImg, addEgs) => {
+    addEgs.removeChild(addImg)
+}
+
+
+
+// eggs.addEventListener("click", () => addEggs(addImg, addEgs), eggs.addEventListener("click", () => plus2.innerHTML++))
+byee.addEventListener("click", () => removeEggs(addImg, addEgs), byee.addEventListener("click", () => plus2.innerHTML--))
+
+
